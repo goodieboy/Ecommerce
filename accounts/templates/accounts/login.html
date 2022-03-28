@@ -1,0 +1,21 @@
+<html>
+<body>
+<h1>Login Page</h1>
+<form method="post" action="">
+    {% csrf_token %}
+    {{ form.email.label }}
+    {{ form.email }}<br><br>
+
+    {{ form.password1.label }}
+    {{ form.password1 }}
+    <br>
+    <br>
+    <input type="submit" value="login">
+
+</form>
+<span><a href="{% url 'accounts:register' %}">Register</a></span>
+{% for message in messages %}
+    <p>{{ message }}</p>
+{% endfor %}
+</body>
+</html>
